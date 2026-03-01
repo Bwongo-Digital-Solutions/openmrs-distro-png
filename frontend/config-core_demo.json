@@ -48,5 +48,19 @@
       "alt": "Papua New Guinea Logo"
     },
     "favicon": "favicon.ico"
-  }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "${openmrsSpaBase}/logo.png",
+      "alt": "Logo"
+    },
+    "footer": {
+      "additionalLogos": [
+        {
+          "src": "${openmrsSpaBase}/bwongo.png",
+          "alt": "bwongo digital solutions"
+        }
+      ]
+    }
+  },
 }

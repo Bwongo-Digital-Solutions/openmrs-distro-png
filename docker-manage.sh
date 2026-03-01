@@ -83,39 +83,39 @@ interactive_menu() {
 # Function to build Docker images
 build() {
     echo -e "${GREEN}Building Docker images...${NC}"
-    docker-compose build
+    docker compose build
     echo -e "${GREEN}Build completed successfully!${NC}"
 }
 
 # Function to build and run containers
 run() {
     echo -e "${GREEN}Building and starting containers...${NC}"
-    docker-compose up -d --build
+    docker compose up -d --build
     echo -e "${GREEN}Containers are running!${NC}"
-    docker-compose ps
+    docker compose ps
 }
 
 # Function to start containers
 start() {
     echo -e "${GREEN}Starting containers...${NC}"
-    docker-compose up -d
+    docker compose up -d
     echo -e "${GREEN}Containers started!${NC}"
-    docker-compose ps
+    docker compose ps
 }
 
 # Function to stop containers
 stop() {
     echo -e "${YELLOW}Stopping containers...${NC}"
-    docker-compose down
+    docker compose down
     echo -e "${GREEN}Containers stopped successfully!${NC}"
 }
 
 # Function to restart containers
 restart() {
     echo -e "${YELLOW}Restarting containers...${NC}"
-    docker-compose restart
+    docker compose restart
     echo -e "${GREEN}Containers restarted successfully!${NC}"
-    docker-compose ps
+    docker compose ps
 }
 
 # Function to update frontend assets without rebuilding
@@ -123,7 +123,7 @@ update_frontend() {
     echo -e "${GREEN}Updating frontend assets...${NC}"
     
     # Get the frontend container name
-    CONTAINER_NAME=$(docker-compose ps -q frontend)
+    CONTAINER_NAME=$(docker compose ps -q frontend)
     
     if [ -z "$CONTAINER_NAME" ]; then
         echo -e "${RED}Error: Frontend container is not running!${NC}"
@@ -148,7 +148,7 @@ update_frontend() {
     
     # Reload nginx to pick up changes
     echo -e "${YELLOW}Reloading nginx...${NC}"
-    docker-compose exec frontend nginx -s reload
+    docker compose exec frontend nginx -s reload
     
     echo -e "${GREEN}Frontend assets updated successfully!${NC}"
     echo -e "${GREEN}Changes should be visible immediately (you may need to clear browser cache)${NC}"
@@ -179,13 +179,13 @@ prune_all() {
 # Function to show logs
 logs() {
     echo -e "${GREEN}Showing container logs (Ctrl+C to exit)...${NC}"
-    docker-compose logs -f
+    docker compose logs -f
 }
 
 # Function to show status
 status() {
     echo -e "${GREEN}Container Status:${NC}"
-    docker-compose ps
+    docker compose ps
     echo ""
     echo -e "${GREEN}Docker System Info:${NC}"
     docker system df

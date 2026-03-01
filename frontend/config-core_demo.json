@@ -40,6 +40,13 @@
     "defaultFacilityUrl": ""
   },
   "@openmrs/esm-styleguide": {
-    "Brand color #1": "#005d5d"
+    "Brand color #1": "#000000",
+    "Brand color #2": "#DC143C",
+    "Brand color #3": "#8B0000",
+    "logo": {
+      "src": "logo.png",
+      "alt": "Papua New Guinea Logo"
+    },
+    "favicon": "favicon.ico"
   }
 }
